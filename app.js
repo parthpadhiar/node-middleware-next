@@ -3,7 +3,7 @@ const app = express();
 
 // app.use(logger)
 
-app.get('/',(req, res, next) => {
+app.get('/', (req, res, next) => {
     console.log('hello');
     res.send("Hello world");
     next();
@@ -16,14 +16,14 @@ app.get('/api', auth, (req, res) => {
     res.send("Auth api")
 })
 
-function logger(req, res, next){
+function logger(req, res, next) {
     console.log('Logger function');
     next();
 }
 
-function auth(req, res, next){
-    if(req.query.admin == "true"){
-    console.log('Auth function true');
+function auth(req, res, next) {
+    if (req.query.admin == "true") {
+        console.log('Auth function true');
         next();
     } else {
         res.send("No Auth")
