@@ -4,7 +4,7 @@ const app = express();
 // app.use(logger)
 
 app.get('/', (req, res, next) => {
-    console.log('Hello User');
+    console.log('hello');
     res.send("Hello world");
     next();
 })
